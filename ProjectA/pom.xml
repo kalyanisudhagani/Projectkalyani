@@ -47,8 +47,12 @@
 </dependency>
 
    </dependencies>
-  
-  <build>
+   <profiles>
+   
+   <profile><id>RGT</id>
+   
+   
+   <build>
   
   <plugins>
     
@@ -65,13 +69,31 @@
    
 </plugins>
   
+   </build>
+   </profile>
+   </profiles>
+  
+  
+  
+  
+ 
+  
+ 
+  
+ 
+    
+     
   
   
   
   
   
   
-  </build>
+  
+  
+   
+   
+   
   
   
   
