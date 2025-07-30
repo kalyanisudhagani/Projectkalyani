@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[browser opened successfully]]>
+    </line>
+    <line>
+      <![CDATA[Login successfully]]>
+    </line>
+    <line>
+      <![CDATA[Logout is done]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2025-07-29T09:28:02 IST" name="Default suite" finished-at="2025-07-29T09:28:28 IST" duration-ms="26553">
+    <groups>
+    </groups>
+    <test started-at="2025-07-29T09:28:02 IST" name="Default test" finished-at="2025-07-29T09:28:28 IST" duration-ms="26553">
+      <class name="producttest.Example1Test">
+        <test-method is-config="true" signature="browserSetup()[pri:0, instance:producttest.Example1Test@23348b5d]" started-at="2025-07-29T09:28:02 IST" name="browserSetup" finished-at="2025-07-29T09:28:10 IST" duration-ms="8175" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[browser opened successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- browserSetup -->
+        <test-method is-config="true" signature="login()[pri:0, instance:producttest.Example1Test@23348b5d]" started-at="2025-07-29T09:28:11 IST" name="login" finished-at="2025-07-29T09:28:23 IST" duration-ms="11973" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="orderProducts(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:producttest.Example1Test@23348b5d]" started-at="2025-07-29T09:28:23 IST" name="orderProducts" data-provider="Details" finished-at="2025-07-29T09:28:28 IST" duration-ms="4535" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kalyani]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Nimmanapalli]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[508286]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderProducts -->
+        <test-method is-config="true" signature="Logout()[pri:0, instance:producttest.Example1Test@23348b5d]" started-at="2025-07-29T09:28:28 IST" name="Logout" finished-at="2025-07-29T09:28:28 IST" duration-ms="711" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout is done]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method is-config="true" signature="broserTerminate()[pri:0, instance:producttest.Example1Test@23348b5d]" started-at="2025-07-29T09:28:28 IST" name="broserTerminate" finished-at="2025-07-29T09:28:28 IST" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- broserTerminate -->
+      </class> <!-- producttest.Example1Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
