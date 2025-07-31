@@ -1,7 +1,11 @@
 package producttest;
 
 
-	import org.testng.annotations.Test;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import org.testng.AssertJUnit;
 import org.testng.Reporter;
 
@@ -25,6 +29,30 @@ import org.testng.annotations.Test;
 		@Test(dataProvider="Details")
 		
 		public void orderProducts(String FirstName,String LastName, String Zipcode) {
+			//create the Test Information
+			 test=report.createTest("RegresssionTest");
+			
+			
+			//Steps Information
+			
+			test.log(Status.INFO, "Step1:Launching The Browser Successfully");
+			
+			test.log(Status.INFO, "Step2:Navigating To Appplication via Url Successfully");
+			
+			test.log(Status.PASS, "Step3:Verified the Webpage  Successfully");
+			
+			
+			if(true==true) {
+				
+
+			test.log(Status.PASS, "Step4:Verified The WebElements Is Displayed");
+			}
+			
+			else {
+				test.log(Status.FAIL, "Step4:Verified The WebElements Is  Not Displayed");
+			}
+				
+			
 
 			// Wait statement
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -32,6 +60,9 @@ import org.testng.annotations.Test;
 			
             //.Verify The Page
 			Assert.assertEquals(driver.getTitle(), "Swag Labs");
+			
+			
+					
 			Reporter.log(" Page Is verified successfully", true);
 			
 
@@ -43,10 +74,21 @@ import org.testng.annotations.Test;
 
 			// Click on the first product
 			hpobj.getfirstproduct().click();
-		
+			Assert.assertTrue(hpobj.getfirstproduct().isDisplayed());
+            if(hpobj.getfirstproduct().isDisplayed()) {
+				
+
+				test.log(Status.PASS, "Step4:Verified The firstproduct Is Displayed");
+				}
+				
+				else {
+					test.log(Status.FAIL, "Step4:Verified The WebElements Is  Not Displayed");
+				}
 			
 			//Verify The Product Is Added 
 			Assert.assertTrue(hpobj.getaddtocartbtn().isDisplayed());
+
+			
 			Reporter.log("Verifed The  1st Product Added successfully", true);
 			
 			// Click on Add To Cart button
@@ -154,8 +196,31 @@ import org.testng.annotations.Test;
 			
 		
 		}
-		 
-
+		/*
+		 @Test
+		 public void orderProducts1() {
+			//create the Test Information
+				ExtentTest test=report.createTest("RegressionTest");
+				
+				
+				//Steps Information
+				
+				test.log(Status.INFO, "Step1:Launching The Browser Successfully");
+				
+			 
+		 }
+		 @Test
+		 public void orderProducts2() {//create the Test Information
+				ExtentTest test=report.createTest("RegressionTest");
+				
+				
+				//Steps Information
+				
+				test.log(Status.INFO, "Step1:Launching The Browser Successfully");
+				
+			 
+		 }*/
+		
 		
 		
 

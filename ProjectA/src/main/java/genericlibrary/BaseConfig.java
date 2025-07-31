@@ -11,10 +11,17 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import pagerepository.LogOutPage;
 import pagerepository.LoginPage;
@@ -24,8 +31,7 @@ import pagerepository.LoginPage;
 public class BaseConfig {
 	
 	public WebDriver driver;
-	
-	public static WebDriver staticdriver;
+public static WebDriver staticdriver;
 	
 	public String url;
 	public String username;
@@ -34,11 +40,52 @@ public class BaseConfig {
 	public String LastName;
 	public String Zipcode;
 	
+	
+	public ExtentSparkReporter spark;
+	
+    public ExtentReports report;
+    public ExtentTest test;
+    
+    
+	@BeforeTest
+	public void ReportSetup() {
+		
+		//Create A SparkReport
+				spark=new ExtentSparkReporter("./AdvanceReports/report.html");
+				
+				//Configure The SparkReport Information
+				spark.config().setDocumentTitle("Regression Testing  for the  Swag Labs");
+				spark.config().setReportName("RegressionSuite");
+				spark.config().setTheme(Theme.STANDARD);
+				
+				
+				//Create the Extent Report
+				
+				 report= new ExtentReports();
+				
+				//Attach THe Spark Report and  Extent Report
+				report.attachReporter(spark);
+				
+				//Configure the system Information in Extent Report
+				report.setSystemInfo("DeviceName:", "Kalyani");
+				report.setSystemInfo("OperatingSystem:", "MacBook Air");
+				report.setSystemInfo("Browser:", "chrome");
+				report.setSystemInfo("BrowserVerision", " chromeVersion- 138.0.7204.169 ");
+				
+		
+	}
+	@AfterTest
+	public void ReportTerminate() {
+		report.flush();
+	}
+	
+	
+	
 	@Parameters("BrowserName")
 
 	@BeforeClass
-	public void browserSetup(	)  {
-		String browser ="chrome";
+	public void browserSetup(String browser	)  {
+		//String browser ="chrome";
 		
 		//open the browser
 		
@@ -163,6 +210,10 @@ public class BaseConfig {
 		
 		
 	}
+	
+	
+	
+	
 	
 }
 

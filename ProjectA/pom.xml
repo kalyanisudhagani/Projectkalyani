@@ -45,15 +45,22 @@
     <artifactId>extentreports</artifactId>
     <version>5.0.9</version>
 </dependency>
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version>
+</dependency>
 
    </dependencies>
+   
    <profiles>
    
    <profile><id>RGT</id>
    
    
    <build>
-  
+  <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+
   <plugins>
     
       <plugin>
